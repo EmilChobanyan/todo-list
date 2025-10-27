@@ -13,12 +13,15 @@ const TodoInput: React.FC = () => {
       setText("");
     }
   };
+  const handleinputchange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+    setText(e.target.value)
+  }
 
   return (
     <div style={{ marginBottom: "1rem" }}>
       <input
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={handleinputchange}
         placeholder="Add new task..."
       />
       <button onClick={handleAdd}>➕ Add</button>

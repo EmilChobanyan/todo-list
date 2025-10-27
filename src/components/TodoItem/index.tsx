@@ -1,14 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "../../store";
-import type { Todo } from "../../todoTypes";
 import { deleteTodo, toggleTodo } from "../../todoSlice";
+import type { TodoItemProps } from "./Type";
 
-interface Props {
-  todo: Todo;
-}
-
-const TodoItem: React.FC<Props> = ({ todo }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
